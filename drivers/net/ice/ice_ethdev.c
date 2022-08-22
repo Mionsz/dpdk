@@ -6294,6 +6294,8 @@ ice_timesync_enable(struct rte_eth_dev *dev)
 	struct ice_adapter *ad =
 			ICE_DEV_PRIVATE_TO_ADAPTER(dev->data->dev_private);
 	int ret;
+	uint64_t starttime;
+	struct timespec system_time;
 
 	if (dev->data->dev_started && !(dev->data->dev_conf.rxmode.offloads &
 	    RTE_ETH_RX_OFFLOAD_TIMESTAMP)) {
@@ -6333,6 +6335,9 @@ ice_timesync_enable(struct rte_eth_dev *dev)
 	ad->tx_tstamp_tc.cc_shift = 0;
 	ad->tx_tstamp_tc.nsec_mask = 0;
 
+	clock_gettime(CLOCK_MONOTONIC, &system_time);
+	starttime = system_time.tv_sec*NSEC_PER_SEC + system_time.tv_nsec;
+	ice_ptp_init_time(hw,starttime);
 	ad->ptp_ena = 1;
 
 	return 0;

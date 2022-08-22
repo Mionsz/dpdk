@@ -1790,8 +1790,8 @@ ice_rx_scan_hw_ring(struct ice_rx_queue *rxq)
 				pkt_flags |= ice_timestamp_dynflag;
 			}
 
-			if (ad->ptp_ena && ((mb->packet_type &
-			    RTE_PTYPE_L2_MASK) == RTE_PTYPE_L2_ETHER_TIMESYNC)) {
+			if (ad->ptp_ena /*&& ((mb->packet_type &
+				RTE_PTYPE_L2_MASK) == RTE_PTYPE_L2_ETHER_TIMESYNC)*/) {
 				rxq->time_high =
 				   rte_le_to_cpu_32(rxdp[j].wb.flex_ts.ts_high);
 				mb->timesync = rxq->queue_id;
@@ -2156,8 +2156,8 @@ ice_recv_scattered_pkts(void *rx_queue,
 			pkt_flags |= ice_timestamp_dynflag;
 		}
 
-		if (ad->ptp_ena && ((first_seg->packet_type & RTE_PTYPE_L2_MASK)
-		    == RTE_PTYPE_L2_ETHER_TIMESYNC)) {
+		if (ad->ptp_ena /*&& ((first_seg->packet_type & RTE_PTYPE_L2_MASK)
+			== RTE_PTYPE_L2_ETHER_TIMESYNC)*/) {
 			rxq->time_high =
 			   rte_le_to_cpu_32(rxd.wb.flex_ts.ts_high);
 			first_seg->timesync = rxq->queue_id;
@@ -2647,8 +2647,8 @@ ice_recv_pkts(void *rx_queue,
 			pkt_flags |= ice_timestamp_dynflag;
 		}
 
-		if (ad->ptp_ena && ((rxm->packet_type & RTE_PTYPE_L2_MASK) ==
-		    RTE_PTYPE_L2_ETHER_TIMESYNC)) {
+		if (ad->ptp_ena /*&& ((rxm->packet_type & RTE_PTYPE_L2_MASK) ==
+			RTE_PTYPE_L2_ETHER_TIMESYNC)*/) {
 			rxq->time_high =
 			   rte_le_to_cpu_32(rxd.wb.flex_ts.ts_high);
 			rxm->timesync = rxq->queue_id;
