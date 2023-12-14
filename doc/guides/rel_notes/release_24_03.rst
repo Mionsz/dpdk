@@ -85,6 +85,10 @@ New Features
   * Added support for comparing result between packet fields or value.
 
 
+* **Updated NVIDIA mlx5 driver.**
+
+  * Added support for accumulating from src field to dst field.
+
 Removed Items
 -------------
 
