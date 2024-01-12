@@ -89,6 +89,13 @@ New Features
 
   * Added support for accumulating from src field to dst field.
 
+  * Added support for VXLAN-GPE flags/rsvd0/rsvd fields matching in DV flow
+    engine (``dv_flow_en`` = 1).
+
+  * Added support for VXLAN-GPE matching in HW Steering flow engine
+    (``dv_flow_en`` = 2).
+
+
 Removed Items
 -------------
 
