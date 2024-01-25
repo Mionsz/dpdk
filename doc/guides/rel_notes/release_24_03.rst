@@ -84,9 +84,6 @@ New Features
 
   * Added support for comparing result between packet fields or value.
 
-
-* **Updated NVIDIA mlx5 driver.**
-
   * Added support for accumulating from src field to dst field.
 
   * Added support for VXLAN-GPE flags/rsvd0/rsvd fields matching in DV flow
@@ -95,6 +92,7 @@ New Features
   * Added support for VXLAN-GPE matching in HW Steering flow engine
     (``dv_flow_en`` = 2).
 
+  * Added support for ``RTE_FLOW_ITEM_TYPE_RANDOM`` flow item.
 
 Removed Items
 -------------
