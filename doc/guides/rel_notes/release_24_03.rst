@@ -94,6 +94,11 @@ New Features
 
   * Added support for ``RTE_FLOW_ITEM_TYPE_RANDOM`` flow item.
 
+  * Added HW steering support for ``RTE_FLOW_ITEM_TYPE_GENEVE`` flow item.
+
+  * Added HW steering support for ``RTE_FLOW_ITEM_TYPE_GENEVE_OPT`` flow item.
+
+
 Removed Items
 -------------
 
