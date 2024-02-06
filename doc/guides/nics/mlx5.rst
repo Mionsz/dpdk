@@ -778,6 +778,13 @@ Limitations
   The flow engine of a process cannot move from active to standby mode
   if preceding active application rules are still present and vice versa.
 
+- Match with compare result item (``RTE_FLOW_ITEM_TYPE_COMPARE``):
+
+  - Only supported in HW steering(``dv_flow_en`` = 2) mode.
+  - Only single flow is supported to the flow table.
+  - Only 32-bit comparison is supported.
+  - Only match with compare result between packet fields is supported.
+
 
 Statistics
 ----------
