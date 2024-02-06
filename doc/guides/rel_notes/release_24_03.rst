@@ -70,6 +70,11 @@ New Features
   * Added a fath path function ``rte_eth_tx_queue_count`` to get the number of used
     descriptors of a Tx queue.
 
+* **Added flow matching with various comparison results.**
+
+  Added ``RTE_FLOW_ITEM_TYPE_COMPARE`` to allow matching on comparison
+  result between packet fields or value.
+
 * **Updated Atomic Rules' Arkville PMD.**
 
   * Added support for Atomic Rules' TK242 packet-capture family of devices
