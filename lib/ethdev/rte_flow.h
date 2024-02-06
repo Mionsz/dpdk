@@ -3893,7 +3893,7 @@ struct rte_flow_action_ethdev {
 };
 
 /**
- * Field IDs for MODIFY_FIELD action.
+ * Packet header field IDs, used by RTE_FLOW_ACTION_TYPE_MODIFY_FIELD.
  */
 enum rte_flow_field_id {
 	RTE_FLOW_FIELD_START = 0,	/**< Start of a packet. */
@@ -3947,9 +3947,9 @@ enum rte_flow_field_id {
  * @warning
  * @b EXPERIMENTAL: this structure may change without prior notice
  *
- * Field description for MODIFY_FIELD action.
+ * Packet header field descriptions, used by RTE_FLOW_ACTION_TYPE_MODIFY_FIELD.
  */
-struct rte_flow_action_modify_data {
+struct rte_flow_field_data {
 	enum rte_flow_field_id field; /**< Field or memory type ID. */
 	union {
 		struct {
@@ -4058,8 +4058,8 @@ enum rte_flow_modify_op {
  */
 struct rte_flow_action_modify_field {
 	enum rte_flow_modify_op operation; /**< Operation to perform. */
-	struct rte_flow_action_modify_data dst; /**< Destination field. */
-	struct rte_flow_action_modify_data src; /**< Source field. */
+	struct rte_flow_field_data dst; /**< Destination field. */
+	struct rte_flow_field_data src; /**< Source field. */
 	uint32_t width; /**< Number of bits to use from a source field. */
 };
 
